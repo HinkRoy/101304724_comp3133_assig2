@@ -4,6 +4,7 @@ import {LoginComponent} from "./login/login.component";
 import {SignUpComponent} from "./sign-up/sign-up.component";
 import {EmployeeListComponent} from "./employee-list/employee-list.component";
 import {EmployeeDetailComponent} from "./employee-detail/employee-detail.component";
+import {AddEmployeeComponent} from "./add-employee/add-employee.component";
 
 const routes: Routes = [
   {
@@ -23,8 +24,8 @@ const routes: Routes = [
     component: EmployeeDetailComponent,
   },
   {
-    path: 'view-employee/:id',
-    component: EmployeeDetailComponent,
+    path: 'add-employee/:id',
+    component: AddEmployeeComponent,
   }
 ];
 

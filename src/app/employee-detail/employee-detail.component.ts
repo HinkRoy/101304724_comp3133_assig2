@@ -40,6 +40,5 @@ export class EmployeeDetailComponent {
         this.employee = result.data.searchEmployeeById;
       });
     })
-
   }
 }

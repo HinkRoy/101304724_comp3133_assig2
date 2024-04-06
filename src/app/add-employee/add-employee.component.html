@@ -1,1 +1,33 @@
-<p>add-employee works!</p>
+<app-header></app-header>
+<div class="content">
+  <mat-card class="card">
+    <mat-card-content class="card-content">
+      <div class="title">{{employee ? 'Update' : 'Add'}} Employee</div>
+      <mat-form-field>
+        <mat-label>First Name</mat-label>
+        <input matInput [(ngModel)]="firstName">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Last Name</mat-label>
+        <input matInput [(ngModel)]="lastName">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Email Id</mat-label>
+        <input matInput [(ngModel)]="email">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Gender</mat-label>
+        <input matInput [(ngModel)]="gender">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Salary</mat-label>
+        <input matInput [(ngModel)]="salary">
+      </mat-form-field>
+      <div style="display: flex;gap: 10px;">
+        <button style="width: 100%" mat-flat-button color="primary" (click)="save()">Save</button>
+        <button style="width: 100%" mat-stroked-button color="primary" (click)="cancel()">Cancel</button>
+      </div>
+
+    </mat-card-content>
+  </mat-card>
+</div>

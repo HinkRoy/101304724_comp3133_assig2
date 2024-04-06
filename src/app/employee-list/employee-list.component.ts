@@ -22,7 +22,7 @@ const GET_ALL_EMPLOYEES = gql`
   styleUrls: ['./employee-list.component.css']
 })
 export class EmployeeListComponent implements OnInit {
-  displayedColumns: string[] = ['firstName', 'lastName', 'email', 'actions'];
+  displayedColumns: string[] = ['firstName', 'lastName', 'email', 'gender', 'salary', 'actions'];
   dataSource: Employee[] = [];
 
   constructor(
@@ -32,9 +32,9 @@ export class EmployeeListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-     this.apollo.query<Employee[]>({
+     this.apollo.watchQuery<Employee[]>({
       query: GET_ALL_EMPLOYEES
-    }).subscribe((result: any) => {
+    }).valueChanges.subscribe((result: any) => {
       this.dataSource = result.data.getAllEmployees;
      });
   }
