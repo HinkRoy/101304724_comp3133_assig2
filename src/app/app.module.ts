@@ -21,6 +21,8 @@ import { HttpLink } from 'apollo-angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { InMemoryCache } from '@apollo/client/core';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { HeaderComponent } from './header/header.component';
+import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     SignUpComponent,
     EmployeeListComponent,
     EmployeeDetailComponent,
-    AddEmployeeComponent
+    AddEmployeeComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +46,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     FormsModule,
     HttpClientModule,
     ApolloModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatTableModule
   ],
   providers: [
     provideAnimationsAsync(),

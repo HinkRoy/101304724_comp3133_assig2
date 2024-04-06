@@ -30,10 +30,9 @@ export class LoginComponent {
   }
 
   login() {
-    console.log(this.username, this.password)
     if (this.username && this.password) {
-      const user = this.apollo.mutate({
-        mutation: LOGIN,
+      this.apollo.query({
+        query: LOGIN,
         variables: {
           username: this.username,
           password: this.password,

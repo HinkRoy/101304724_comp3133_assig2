@@ -1,1 +1,11 @@
-<p>employee-detail works!</p>
+<app-header></app-header>
+<div class="content">
+  <mat-card>
+    <mat-card-content class="content">
+      <div class="title">View Employee Details</div>
+      <div>Employee FirstName: {{employee?.first_name}}</div>
+      <div>Employee LastName: {{employee?.last_name}}</div>
+      <div>Employee Email ID: {{employee?.email}}</div>
+    </mat-card-content>
+  </mat-card>
+</div>
