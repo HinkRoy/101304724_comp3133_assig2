@@ -57,7 +57,7 @@ import {MatTableModule} from '@angular/material/table';
         return {
           cache: new InMemoryCache(),
           link: httpLink.create({
-            uri: 'http://localhost:4000/graphql',
+            uri: 'https://101304724-comp-3133-assignment1.vercel.app/graphql',
           }),
         };
       },
