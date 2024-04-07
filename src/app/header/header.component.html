@@ -1,7 +1,10 @@
 <div class="container">
   <div class="title">Employee Management App</div>
   <div>
-    <button mat-flat-button color="primary" routerLink="/login">Login</button>
-    <button mat-flat-button color="primary" style="margin-left: 10px" routerLink="/sign-up">SignUp</button>
+    <button *ngIf="!user" mat-flat-button color="primary" routerLink="/login">Login</button>
+    <div *ngIf="user" style="display: flex;align-items: center;gap: 10px">
+      <div>Hi~, {{user.username}}</div>
+      <button mat-flat-button color="primary" (click)="logout()">Logout</button>
+    </div>
   </div>
 </div>

@@ -41,7 +41,7 @@ export class LoginComponent {
         if (res.data.login) {
           this._snackBar.open("Login successful!");
           localStorage.setItem("user", JSON.stringify(res.data.login));
-          this.router.navigateByUrl('/login')
+          this.router.navigateByUrl('/')
         } else {
           this._snackBar.open("Invalid username or password!");
         }
