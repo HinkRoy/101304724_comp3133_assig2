@@ -83,6 +83,7 @@ export class AddEmployeeComponent {
       if (params.id !== '_add') {
         this.apollo.query<Employee>({
           query: GET_EMPLOYEE_DETAIL,
+          fetchPolicy: 'no-cache',
           variables: { id: params.id }
         }).subscribe((result: any) => {
           this.employee = result.data.searchEmployeeById;

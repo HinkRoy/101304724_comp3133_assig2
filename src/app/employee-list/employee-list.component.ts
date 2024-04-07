@@ -52,7 +52,8 @@ export class EmployeeListComponent implements OnInit {
 
   getEmployeeList() {
     this.apollo.watchQuery<Employee[]>({
-      query: GET_ALL_EMPLOYEES
+      query: GET_ALL_EMPLOYEES,
+      fetchPolicy: 'no-cache',
     }).valueChanges.subscribe((result: any) => {
       this.dataSource = result.data.getAllEmployees;
     });

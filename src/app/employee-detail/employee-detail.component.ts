@@ -35,6 +35,7 @@ export class EmployeeDetailComponent {
     this.route.params.subscribe((params: any) => {
       this.apollo.query<Employee>({
         query: GET_EMPLOYEE_DETAIL,
+        fetchPolicy: 'no-cache',
         variables: { id: params.id }
       }).subscribe((result: any) => {
         this.employee = result.data.searchEmployeeById;

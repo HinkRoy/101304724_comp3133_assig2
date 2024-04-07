@@ -33,6 +33,7 @@ export class LoginComponent {
     if (this.username && this.password) {
       this.apollo.query({
         query: LOGIN,
+        fetchPolicy: 'no-cache',
         variables: {
           username: this.username,
           password: this.password,
