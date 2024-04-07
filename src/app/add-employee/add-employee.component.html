@@ -17,12 +17,19 @@
       </mat-form-field>
       <mat-form-field>
         <mat-label>Gender</mat-label>
-        <input matInput [(ngModel)]="gender">
+        <mat-select [(ngModel)]="gender">
+          <mat-option value="Male">Male</mat-option>
+          <mat-option value="Female">Female</mat-option>
+          <mat-option value="Other">Other</mat-option>
+        </mat-select>
       </mat-form-field>
       <mat-form-field>
         <mat-label>Salary</mat-label>
         <input matInput [(ngModel)]="salary">
       </mat-form-field>
+      <div style="color: red">
+        {{error}}
+      </div>
       <div style="display: flex;gap: 10px;">
         <button style="width: 100%" mat-flat-button color="primary" (click)="save()">Save</button>
         <button style="width: 100%" mat-stroked-button color="primary" (click)="cancel()">Cancel</button>

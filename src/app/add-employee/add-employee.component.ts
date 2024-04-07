@@ -68,6 +68,8 @@ export class AddEmployeeComponent {
   gender: string = ""
   salary: string = ""
 
+  error = ""
+
   constructor(
     private apollo: Apollo,
     private router: Router,
@@ -95,6 +97,38 @@ export class AddEmployeeComponent {
   }
 
   save(): void {
+    this.error = ""
+
+    if (!this.firstName) {
+      this.error = "First name should not be empty"
+      return;
+    }
+
+    if (!this.lastName) {
+      this.error = "Last name should not be empty"
+      return;
+    }
+
+    if (!this.email) {
+      this.error = "Email should not be empty"
+      return;
+    }
+
+    if (!this.gender) {
+      this.error = "Gender should not be empty"
+      return;
+    }
+
+    if (!this.salary) {
+      this.error = "Salary should not be empty"
+      return;
+    }
+
+    if (isNaN(Number(this.salary))) {
+      this.error = "Salary should be a number"
+      return;
+    }
+
     if (this.firstName && this.lastName && this.email && this.gender && this.salary) {
       if (this.employee) {
         this.apollo.mutate({
